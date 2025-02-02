@@ -8,6 +8,7 @@ import {
   setLoading,
 } from "@/store/features/cart/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { formatCurrency } from "@/utils/formatCurrency";
 import { Loader2, ShoppingCartIcon, TrashIcon } from "lucide-react";
 import Image from "next/image";
 import { toast } from "sonner";
@@ -63,7 +64,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
         <div className="w-full">
           <h3 className="text-lg font-semibold">{name}</h3>
-          <p className="text-gray-700 dark:text-gray-400 text-sm">${price}</p>
+          <p className="text-gray-700 dark:text-gray-400 text-sm">
+            {formatCurrency(price)}
+          </p>
 
           {view === "list" && (
             <Button

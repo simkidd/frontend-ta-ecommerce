@@ -1,8 +1,10 @@
 "use client";
-import React, { useEffect } from "react";
-import ProductCard from "./ProductCard";
-import { products as productsData } from "@/data/products";
+import {
+  fetchProducts,
+  setCurrentPage,
+} from "@/store/features/product/productSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useEffect } from "react";
 import {
   Pagination,
   PaginationContent,
@@ -11,24 +13,18 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "../ui/pagination";
-import {
-  setCurrentPage,
-  setLoading,
-  setProducts,
-} from "@/store/features/product/productSlice";
 import { Skeleton } from "../ui/skeleton";
+import ProductCard from "./ProductCard";
+import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
+import { AlertCircleIcon } from "lucide-react";
 
 const ProductsList = () => {
   const dispatch = useAppDispatch();
-  const { view, products, currentPage, itemsPerPage, loading } = useAppSelector(
-    (state) => state.product
-  );
+  const { view, products, currentPage, itemsPerPage, loading, error } =
+    useAppSelector((state) => state.product);
 
   useEffect(() => {
-    dispatch(setLoading(true)); // Start loading
-    setTimeout(() => {
-      dispatch(setProducts(productsData));
-    }, 1000);
+    dispatch(fetchProducts());
   }, [dispatch]);
 
   // Calculate total pages
@@ -50,6 +46,18 @@ const ProductsList = () => {
     view === "grid"
       ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
       : "flex flex-col gap-6";
+
+  if (error) {
+    return (
+      <div className="">
+        <Alert variant="destructive" className="mt-4 max-w-sm mx-auto">
+          <AlertCircleIcon className="h-4 w-4" />
+          <AlertTitle>Error</AlertTitle>
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      </div>
+    );
+  }
 
   return (
     <div>
