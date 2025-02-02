@@ -22,7 +22,7 @@ const initialState: ProductState = {
   error: null,
 };
 
-export const SLICE_NAME = "products";
+export const SLICE_NAME = "product";
 
 export const fetchProducts = createAsyncThunk<
   IProduct[],
@@ -67,7 +67,6 @@ const productSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    // When the fetchProducts action is dispatched:
     builder.addCase(fetchProducts.pending, (state) => {
       state.loading = true;
       state.error = null;
