@@ -13,8 +13,7 @@ export const columns: ColumnDef<IProduct>[] = [
     id: "sn",
     header: () => <div className="font-semibold text-nowrap">S/N</div>,
     cell: ({ row }) => {
-      const product = row.original;
-      return <div>{product.id}</div>;
+      return <div>{row.index + 1}</div>;
     },
   },
   {

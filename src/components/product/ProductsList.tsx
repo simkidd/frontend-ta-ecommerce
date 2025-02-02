@@ -68,9 +68,9 @@ const ProductsList = () => {
               key={index}
               className="flex flex-col gap-2 p-4 border rounded-md shadow-sm"
             >
-              <Skeleton className="w-full h-40 bg-gray-200" />
-              <Skeleton className="w-3/4 h-4 bg-gray-200" />
-              <Skeleton className="w-1/2 h-4 bg-gray-200" />
+              <Skeleton className="w-full h-40 bg-gray-200 dark:bg-sidebar-accent" />
+              <Skeleton className="w-3/4 h-4 bg-gray-200 dark:bg-sidebar-accent" />
+              <Skeleton className="w-1/2 h-4 bg-gray-200 dark:bg-sidebar-accent" />
             </div>
           ))}
         </div>

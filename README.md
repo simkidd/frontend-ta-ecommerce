@@ -69,14 +69,15 @@ This project is an Ecommerce Dashboard built using **Next.js 14+, TypeScript, Re
 │   │   ├── Cart.tsx
 │   │   ├── cartIcon.tsx
 │   │   ├── CartItem.tsx
-│   │   ├── product/
-│   │   │   ├── columns.tsx
-│   │   │   ├── DescriptionModal.tsx
-│   │   │   ├── ProductCard.tsx
-│   │   │   ├── ProductsList.tsx
-│   │   │   ├── ProductsView.tsx
-│   │   │   ├── ProductTable.tsx
-│   │   │   ├── ProductTableList.tsx
+│   ├── product/
+│   │   ├── columns.tsx
+│   │   ├── DescriptionModal.tsx
+│   │   ├── ProductCard.tsx
+│   │   ├── ProductsList.tsx
+│   │   ├── ProductStats.tsx
+│   │   ├── ProductsView.tsx
+│   │   ├── ProductTable.tsx
+│   │   ├── ProductTableList.tsx
 │   ├── shared/
 │   │   ├── header/
 │   │   ├── sidebar/
