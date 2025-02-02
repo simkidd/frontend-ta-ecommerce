@@ -1,0 +1,76 @@
+"use client"
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarSeparator,
+} from "@/components/ui/sidebar";
+import { CircleGaugeIcon, ShoppingBasketIcon } from "lucide-react";
+import UserComp from "./UserComp";
+import { usePathname } from "next/navigation";
+
+const items = [
+  {
+    title: "Dashboard",
+    url: "/",
+    icon: CircleGaugeIcon,
+  },
+  {
+    title: "Products List",
+    url: "/products",
+    icon: ShoppingBasketIcon,
+  },
+];
+
+export function AppSidebar() {
+  const pathname = usePathname();
+
+  const isItemActive = (itemUrl: string) => {
+    if (itemUrl === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(itemUrl);
+  };
+
+  return (
+    <Sidebar>
+      <SidebarHeader>
+        <div className="flex items-center gap-2 py-4 px-4">
+          <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center">
+            <ShoppingBasketIcon className="h-5 w-5 text-primary" />
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">E-Commerce</h3>
+            <p className="text-xs text-muted-foreground">Admin Dashboard</p>
+          </div>
+        </div>
+      </SidebarHeader>
+      <SidebarSeparator />
+      <SidebarContent>
+        <SidebarMenu>
+          {items.map((item) => (
+            <SidebarMenuItem key={item.title}>
+              <SidebarMenuButton asChild isActive={isItemActive(item.url)}>
+                <a href={item.url}>
+                  <item.icon />
+                  <span>{item.title}</span>
+                </a>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          ))}
+        </SidebarMenu>
+      </SidebarContent>
+      <SidebarFooter>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <UserComp />
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
+    </Sidebar>
+  );
+}
