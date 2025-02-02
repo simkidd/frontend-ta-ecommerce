@@ -13,7 +13,7 @@ import { formatCurrency } from "@/utils/formatCurrency";
 import { Button } from "../ui/button";
 import { ScrollArea } from "../ui/scroll-area";
 import CartItem from "./CartItem";
-import CartIcon from "./cartIcon";
+import CartIcon from "./CartIcon";
 
 const Cart = () => {
   const { cartItems } = useAppSelector((state) => state.cart);
