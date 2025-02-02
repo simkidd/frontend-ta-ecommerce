@@ -19,8 +19,6 @@ const ProductTableList = () => {
   if (loading) {
     return (
       <div className="space-y-4">
-        <h2 className="text-lg font-semibold mb-4">Product List</h2>
-        {/* Render a few skeleton rows as a placeholder */}
         <div className="space-y-2">
           {[...Array(5)].map((_, index) => (
             <Skeleton key={index} className="w-full h-10" />
