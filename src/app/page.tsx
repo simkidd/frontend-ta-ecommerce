@@ -34,7 +34,7 @@ const Dashboard = () => {
         {stats.map((stat) => (
           <Card
             key={stat.title}
-            className="flex items-center p-6 border bg-white dark:bg-gray-800 shadow-none"
+            className="flex items-center p-6 border bg-white dark:bg-sidebar-accent shadow-none"
           >
             <CardContent className="w-full flex items-center p-0">
               <div

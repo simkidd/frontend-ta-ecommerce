@@ -53,7 +53,7 @@ const ProductTable = <TData, TValue>({
     <div>
       <div className="mb-4">
         <Table>
-          <TableHeader className="bg-gray-100">
+          <TableHeader className="bg-gray-100 dark:bg-sidebar-accent">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   Sidebar,
   SidebarContent,
@@ -9,9 +9,10 @@ import {
   SidebarMenuItem,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
-import { CircleGaugeIcon, ShoppingBasketIcon } from "lucide-react";
+import { CircleGaugeIcon, LayersIcon, ShoppingBasketIcon } from "lucide-react";
 import UserComp from "./UserComp";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const items = [
   {
@@ -22,7 +23,7 @@ const items = [
   {
     title: "Products List",
     url: "/products",
-    icon: ShoppingBasketIcon,
+    icon: LayersIcon,
   },
 ];
 
@@ -54,11 +55,15 @@ export function AppSidebar() {
         <SidebarMenu>
           {items.map((item) => (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton asChild isActive={isItemActive(item.url)}>
-                <a href={item.url}>
+              <SidebarMenuButton
+                asChild
+                isActive={isItemActive(item.url)}
+                size="lg"
+              >
+                <Link href={item.url}>
                   <item.icon />
                   <span>{item.title}</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}

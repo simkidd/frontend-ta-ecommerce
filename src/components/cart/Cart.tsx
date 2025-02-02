@@ -12,7 +12,7 @@ import { useAppSelector } from "@/store/hooks";
 import { formatCurrency } from "@/utils/formatCurrency";
 import { Button } from "../ui/button";
 import { ScrollArea } from "../ui/scroll-area";
-import CartIcon from "./cartIcon";
+import CartIcon from "./CartIcon";
 import CartItem from "./CartItem";
 
 const Cart = () => {
@@ -52,7 +52,7 @@ const Cart = () => {
 
             <SheetFooter>
               <div className="flex flex-col w-full">
-                <div className="my-4 p-4 bg-gray-100 rounded-lg flex justify-between items-center">
+                <div className="my-4 p-4 bg-gray-100 dark:bg-sidebar-accent rounded-lg flex justify-between items-center">
                   <span className="text-lg font-medium">Total:</span>
                   <span className="text-xl font-semibold">
                     {formatCurrency(totalAmount)}

@@ -7,7 +7,7 @@ const CartIcon = () => {
   const { cartItems } = useAppSelector((state) => state.cart);
 
   return (
-    <div className="relative">
+    <div className="relative w-8 h-8 rounded flex items-center justify-center">
       <div className="size-6 flex items-center justify-center">
         <ShoppingCartIcon size={18} />
       </div>

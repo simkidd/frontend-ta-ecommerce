@@ -13,8 +13,8 @@ const UserComp = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <SidebarMenuButton>
-          <Avatar className="h-6 w-6">
+        <SidebarMenuButton size="lg">
+          <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
             <AvatarFallback>JD</AvatarFallback>
           </Avatar>
@@ -30,7 +30,7 @@ const UserComp = () => {
           <span>Account</span>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <span>Billing</span>
+          <span>Settings</span>
         </DropdownMenuItem>
         <DropdownMenuItem>
           <span>Sign out</span>

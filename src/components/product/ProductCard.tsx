@@ -44,11 +44,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <Card
-      className={`w-full ${
-        view === "list" ? "flex flex-row justify-between" : "flex flex-col"
-      }`}
-    >
+    <Card className={`w-full `}>
       {/* Card Content */}
       <CardContent
         className={`p-4 ${
@@ -60,38 +56,61 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <Image
             src={imageUrl}
             alt={name}
-            className="w-full object-cover rounded-t-lg mb-4"
+            className="w-full object-cover rounded-lg mb-4"
             width={300}
             height={300}
           />
         </div>
-        <div>
+        <div className="w-full">
           <h3 className="text-lg font-semibold">{name}</h3>
-          <p className="text-gray-700 text-sm">${price}</p>
+          <p className="text-gray-700 dark:text-gray-400 text-sm">${price}</p>
+
+          {view === "list" && (
+            <Button
+              onClick={handleCartAction}
+              variant={isInCart ? "destructive" : "default"}
+              className="flex items-center justify-center ml-auto mt-2"
+              disabled={loading}
+            >
+              {loading ? (
+                <Loader2 className="animate-spin" />
+              ) : isInCart ? (
+                <>
+                  <TrashIcon size={18} /> Remove from Cart
+                </>
+              ) : (
+                <>
+                  <ShoppingCartIcon size={18} /> Add to Cart
+                </>
+              )}
+            </Button>
+          )}
         </div>
       </CardContent>
 
       {/* Card Footer (Button) */}
-      <CardFooter className={`p-4 mt-auto`}>
-        <Button
-          onClick={handleCartAction}
-          variant={isInCart ? "destructive" : "default"}
-          className="w-full flex items-center justify-center"
-          disabled={loading}
-        >
-          {loading ? (
-            <Loader2 className="animate-spin" />
-          ) : isInCart ? (
-            <>
-              <TrashIcon size={18} /> Remove from Cart
-            </>
-          ) : (
-            <>
-              <ShoppingCartIcon size={18} /> Add to Cart
-            </>
-          )}
-        </Button>
-      </CardFooter>
+      {view === "grid" && (
+        <CardFooter className={`p-4 mt-auto`}>
+          <Button
+            onClick={handleCartAction}
+            variant={isInCart ? "destructive" : "default"}
+            className="w-full flex items-center justify-center "
+            disabled={loading}
+          >
+            {loading ? (
+              <Loader2 className="animate-spin" />
+            ) : isInCart ? (
+              <>
+                <TrashIcon size={18} /> Remove from Cart
+              </>
+            ) : (
+              <>
+                <ShoppingCartIcon size={18} /> Add to Cart
+              </>
+            )}
+          </Button>
+        </CardFooter>
+      )}
     </Card>
   );
 };

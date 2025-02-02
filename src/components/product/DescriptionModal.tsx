@@ -38,15 +38,15 @@ const DescriptionModal = ({ product }: { product: IProduct }) => {
               className="rounded-lg shadow-md"
             />
           </div>
-          <div className="space-y-2 text-gray-600">
+          <div className="space-y-2 text-gray-600 dark:text-gray-300">
             <p className="text-sm">{product.description}</p>
-            <p className="text-lg font-semibold text-gray-800">
+            <p className="text-lg font-semibold text-gray-800 dark:text-gray-300">
               Price:{" "}
               <span className="text-green-600">
                 {formatCurrency(product.price)}
               </span>
             </p>
-            <p className="text-sm">
+            <p className="text-sm text-gray-800 dark:text-gray-300">
               Stock:{" "}
               <span
                 className={
