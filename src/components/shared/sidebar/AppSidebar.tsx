@@ -52,14 +52,14 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarSeparator />
       <SidebarContent>
-        <SidebarMenu className="py-4">
+        <SidebarMenu className="py-4 px-2">
           {items.map((item) => (
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton
                 asChild
                 isActive={isItemActive(item.url)}
                 size="lg"
-                className="px-4 rounded-none"
+                className="px-4"
               >
                 <Link href={item.url}>
                   <item.icon />
