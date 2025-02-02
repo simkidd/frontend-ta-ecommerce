@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <header className="sticky z-20 top-0 w-full bg-white dark:bg-sidebar border-b border-b-gray-300 dark:border-b-sidebar-border flex items-center py-3 px-4">
-      <div className="container flex h-14 items-center">
+      <div className="w-full flex h-14 items-center">
         {isMobile && (
           <div>
             <SidebarTrigger className="w-8 h-8" />
