@@ -43,7 +43,7 @@ const DescriptionModal = ({ product }: { product: IProduct }) => {
             <p className="text-lg font-semibold text-gray-800 dark:text-gray-300">
               Price:{" "}
               <span className="text-green-600">
-                {formatCurrency(product.price)}
+                {formatCurrency(parseFloat(product.price))}
               </span>
             </p>
             <p className="text-sm text-gray-800 dark:text-gray-300">
