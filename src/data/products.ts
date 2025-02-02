@@ -1,7 +1,6 @@
 // data/products.ts
-import { IProduct } from "@/interfaces/product.interface";
 
-export const products: IProduct[] = [
+export const products = [
   {
     id: 1,
     name: "Wireless Bluetooth Earbuds",
