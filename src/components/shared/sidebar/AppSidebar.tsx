@@ -59,6 +59,7 @@ export function AppSidebar() {
                 asChild
                 isActive={isItemActive(item.url)}
                 size="lg"
+                className="px-4"
               >
                 <Link href={item.url}>
                   <item.icon />

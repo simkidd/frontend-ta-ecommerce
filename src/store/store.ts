@@ -9,7 +9,7 @@ import { PERSIST_STORE_NAME } from "@/constants/app.constant";
 const persistConfig = {
   key: PERSIST_STORE_NAME,
   storage,
-  whitelist: ["cart", "products"], // Only persist these slices
+  whitelist: ["cart", "product"], // Only persist these slices
 };
 
 // Combine reducers
