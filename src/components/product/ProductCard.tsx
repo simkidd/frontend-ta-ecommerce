@@ -65,7 +65,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <div className="w-full">
           <h3 className="text-lg font-semibold">{name}</h3>
           <p className="text-gray-700 dark:text-gray-400 text-sm">
-            {formatCurrency(price)}
+            {formatCurrency(parseFloat(price))}
           </p>
 
           {view === "list" && (
