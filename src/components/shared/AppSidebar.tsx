@@ -23,7 +23,7 @@ import {
 const items = [
   {
     title: "Dashboard",
-    url: "/dashboard",
+    url: "/",
     icon: CircleGaugeIcon,
   },
   {
