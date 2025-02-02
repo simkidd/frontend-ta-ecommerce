@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { useAppSelector } from "@/store/hooks";
 import { ShoppingCartIcon } from "lucide-react";
 
+
 const CartIcon = () => {
   const { cartItems } = useAppSelector((state) => state.cart);
 

@@ -12,8 +12,8 @@ import { useAppSelector } from "@/store/hooks";
 import { formatCurrency } from "@/utils/formatCurrency";
 import { Button } from "../ui/button";
 import { ScrollArea } from "../ui/scroll-area";
-import CartIcon from "./CartIcon";
 import CartItem from "./CartItem";
+import CartIcon from "./CartIcon";
 
 const Cart = () => {
   const { cartItems } = useAppSelector((state) => state.cart);
