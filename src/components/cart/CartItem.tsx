@@ -2,9 +2,7 @@ import { ICartItem } from "@/interfaces/cart.interface";
 import { removeFromCart } from "@/store/features/cart/cartSlice";
 import { useAppDispatch } from "@/store/hooks";
 import { formatCurrency } from "@/utils/formatCurrency";
-import {
-  TrashIcon
-} from "lucide-react";
+import { TrashIcon } from "lucide-react";
 import Image from "next/image";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
@@ -23,7 +21,9 @@ const CartItem = ({ item }: { item: ICartItem }) => {
 
       <div className="flex-1">
         <p className="font-medium text-sm">{item.name}</p>
-        <p className="font-semibold">{formatCurrency(item.price)}</p>
+        <p className="font-semibold">
+          {formatCurrency(parseFloat(item.price))}
+        </p>
       </div>
 
       <Button

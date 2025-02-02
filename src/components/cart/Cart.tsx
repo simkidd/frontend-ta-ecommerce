@@ -18,7 +18,7 @@ import CartIcon from "./cartIcon";
 const Cart = () => {
   const { cartItems } = useAppSelector((state) => state.cart);
 
-  const totalAmount = cartItems.reduce((acc, item) => acc + item.price, 0);
+  const totalAmount = cartItems.reduce((acc: number, item) => acc + parseFloat(item.price), 0);
 
   return (
     <Sheet>
