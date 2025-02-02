@@ -1,8 +1,8 @@
 "use client"
 import React from "react";
-import { SidebarTrigger } from "../ui/sidebar";
-import Cart from "../cart/Cart";
 import { useIsMobile } from "@/hooks/use-mobile";
+import Cart from "@/components/cart/Cart";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 const Header = () => {
   const isMobile = useIsMobile();
